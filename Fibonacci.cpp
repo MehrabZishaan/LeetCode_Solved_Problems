@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int fib(int n) {
+        int dp[33];
+        for(int i = 1; i<=n; i++)
+        {
+            dp[i] = -1;
+        }
+        if(n == 0)
+        {
+            return 0;
+        }
+        if(n == 1 || n == 2)
+        {
+            return 1;
+        }
+
+        if(dp[n] != -1)
+        {
+            return dp[n];
+        }
+        int ans = fib(n-1) + fib(n-2);
+        dp[n] = ans;
+        return ans;
+    }
+};
